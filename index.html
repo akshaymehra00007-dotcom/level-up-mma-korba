@@ -111,7 +111,7 @@
           <h2>BUILT FOR THE<br><span class="outline">NEXT LEVEL.</span></h2>
           <p>Level Up Mixed Martial Arts Academy & Fitness Studio brings combat sports, traditional martial arts and high-energy fitness together under one roof. Our positive, welcoming environment helps beginners, children, fitness enthusiasts and serious athletes train with confidence.</p>
           <p>Every session focuses on technique, discipline, strength, respect and real progress—with professional guidance at every stage.</p>
-          <div class="stats"><div class="stat"><strong>4.9</strong><small>Google rating</small></div><div class="stat"><strong>82+</strong><small>Google reviews</small></div><div class="stat"><strong>9</strong><small>Training programs</small></div><div class="stat"><strong>1</strong><small>Powerful community</small></div></div>
+          <div class="stats"><div class="stat"><strong data-count="4.9" data-decimals="1">0.0</strong><small>Google rating</small></div><div class="stat"><strong data-count="82" data-suffix="+">0+</strong><small>Google reviews</small></div><div class="stat"><strong data-count="9">0</strong><small>Training programs</small></div><div class="stat"><strong data-count="1">0</strong><small>Powerful community</small></div></div>
         </div>
         <div class="image-stack reveal"><img class="main-img" src="assets/gallery/martial-arts.webp" alt="Martial arts training session" loading="lazy" decoding="async" width="1200" height="798"><div class="stamp">Discipline<br>Strength<br>Confidence</div></div>
       </div>
@@ -153,7 +153,7 @@
 
     <section id="reviews">
       <div class="wrap reviews-grid">
-        <div class="reveal"><div class="eyebrow">Google reviews</div><div class="score">4.9</div><div class="stars" style="font-size:23px">★★★★★</div><p class="score-label">Trusted by students and families<br>across Korba · 82 reviews</p></div>
+        <div class="reveal"><div class="eyebrow">Google reviews</div><div class="score" data-count="4.9" data-decimals="1">0.0</div><div class="stars" style="font-size:23px">★★★★★</div><p class="score-label">Trusted by students and families<br>across Korba · 82 reviews</p></div>
         <div class="review-list">
           <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“This academy is excellent, and the teachers are highly professional. The environment is very positive and welcoming, making learning comfortable and enjoyable.”</blockquote><strong>— Sumit Chouhan</strong></article>
           <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“Expert guidance, disciplined training and a motivating atmosphere. A great place for martial arts and fitness.”</blockquote><strong>— Google Reviewer</strong></article>
@@ -228,6 +228,10 @@
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const counters=document.querySelectorAll('[data-count]');
+    const runCounter=el=>{if(el.dataset.counted)return;el.dataset.counted='true';const target=Number(el.dataset.count),decimals=Number(el.dataset.decimals||0),suffix=el.dataset.suffix||'',duration=1300,start=performance.now();const tick=now=>{const progress=Math.min((now-start)/duration,1),eased=1-Math.pow(1-progress,3),value=target*eased;el.textContent=value.toFixed(decimals)+suffix;if(progress<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
+    if(reducedMotion)counters.forEach(el=>{el.textContent=Number(el.dataset.count).toFixed(Number(el.dataset.decimals||0))+(el.dataset.suffix||'')});
+    else{const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){runCounter(entry.target);counterObserver.unobserve(entry.target)}}),{threshold:.55});counters.forEach(el=>counterObserver.observe(el))}
     document.getElementById('trialForm').addEventListener('submit',e=>{
       e.preventDefault();
       const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),interest=document.getElementById('interest').value,message=document.getElementById('message').value.trim();
