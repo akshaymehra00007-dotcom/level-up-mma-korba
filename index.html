@@ -13,6 +13,7 @@
     :root{--red:#ff2d20;--red2:#a70f09;--black:#070707;--panel:#111;--white:#f4f1ec;--muted:#aaa;--line:rgba(255,255,255,.12)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
     body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+    body.loading{overflow:hidden}.preloader{position:fixed;inset:0;z-index:1000;background:#050505;display:grid;place-items:center;transition:opacity .75s cubic-bezier(.77,0,.18,1),visibility .75s}.preloader:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,45,32,.09),transparent 38%);animation:loaderAura 1.8s ease-in-out infinite}.preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}.loader-inner{position:relative;width:min(360px,72vw);text-align:center}.loader-logo{position:relative;margin:auto;width:min(300px,65vw)}.loader-logo img{display:block;width:100%;height:auto}.loader-logo .loader-red{position:absolute;inset:0;animation:loaderFlash 1.35s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(255,45,32,.65))}.loader-rule{height:1px;background:#282828;margin:30px auto 15px;overflow:hidden;position:relative}.loader-rule:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--red),#ff8e62);transform:translateX(-100%);animation:loaderProgress 1.8s cubic-bezier(.65,0,.35,1) forwards}.loader-copy{display:flex;justify-content:space-between;color:#777;font:600 9px Inter;letter-spacing:.23em;text-transform:uppercase}.loader-count{color:#aaa}@keyframes loaderProgress{to{transform:translateX(0)}}@keyframes loaderAura{50%{opacity:.45;transform:scale(1.08)}}@keyframes loaderFlash{0%,100%{opacity:.3}45%{opacity:1}58%{opacity:.45}68%{opacity:1}}body:not(.loading) main,body:not(.loading) header,body:not(.loading) footer,body:not(.loading) .wa{animation:siteReveal .85s cubic-bezier(.22,1,.36,1) both}@keyframes siteReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{font:700 13px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:28px;height:2px;background:var(--red)}
     h1,h2,h3,.display{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;margin:0;line-height:.88}h2{font-size:clamp(54px,8vw,105px);letter-spacing:-.035em}.outline{-webkit-text-stroke:1px rgba(255,255,255,.46);color:transparent}.red{color:var(--red)}
     header{position:fixed;top:0;left:0;right:0;z-index:30;border-bottom:1px solid transparent;transition:.3s}header.scrolled{background:rgba(6,6,6,.9);backdrop-filter:blur(15px);border-color:var(--line)}nav{height:84px;display:flex;align-items:center;justify-content:space-between}
@@ -37,7 +38,14 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
-<body>
+<body class="loading">
+  <div class="preloader" id="preloader" role="status" aria-label="Loading Level Up Academy">
+    <div class="loader-inner">
+      <div class="loader-logo"><img src="assets/level-up-logo.png" alt="Level Up MMA Academy"><img class="loader-red" src="assets/level-up-logo-red.png" alt="" aria-hidden="true"></div>
+      <div class="loader-rule"></div>
+      <div class="loader-copy"><span>Discipline · Strength · Progress</span><span class="loader-count" id="loaderCount">00</span></div>
+    </div>
+  </div>
   <header id="header">
     <nav class="wrap">
       <a class="logo" href="#home" aria-label="Level Up home"><img class="brand-logo" src="assets/level-up-logo.png" alt="Level Up MMA Academy"><img class="brand-logo logo-red-glow" src="assets/level-up-logo-red.png" alt="" aria-hidden="true"></a>
@@ -172,6 +180,11 @@
   <a class="wa" href="https://wa.me/919575252555?text=Hi%20Level%20Up%20Academy%2C%20I%20want%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
 
   <script>
+    const preloader=document.getElementById('preloader'),loaderCount=document.getElementById('loaderCount'),loadStart=performance.now();
+    let progress=0;
+    const countTimer=setInterval(()=>{progress=Math.min(progress+Math.ceil((100-progress)*.16),99);loaderCount.textContent=String(progress).padStart(2,'0')},55);
+    const finishLoader=()=>{const wait=Math.max(0,1850-(performance.now()-loadStart));setTimeout(()=>{clearInterval(countTimer);loaderCount.textContent='100';setTimeout(()=>{preloader.classList.add('loaded');document.body.classList.remove('loading')},130)},wait)};
+    if(document.readyState==='complete')finishLoader();else addEventListener('load',finishLoader,{once:true});
     const header=document.getElementById('header'),menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
     addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
     menu.addEventListener('click',()=>nav.classList.toggle('open'));
