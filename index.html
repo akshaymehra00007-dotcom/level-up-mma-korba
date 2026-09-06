@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="Level Up Mixed Martial Arts Academy & Fitness Studio in Korba. Train in MMA, boxing, kickboxing, karate, taekwondo, judo, jiu-jitsu, yoga and Zumba." />
+  <title>Level Up MMA Academy & Fitness Studio | Korba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#ff2d20;--red2:#a70f09;--black:#070707;--panel:#111;--white:#f4f1ec;--muted:#aaa;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{font:700 13px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:28px;height:2px;background:var(--red)}
+    h1,h2,h3,.display{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;margin:0;line-height:.88}h2{font-size:clamp(54px,8vw,105px);letter-spacing:-.035em}.outline{-webkit-text-stroke:1px rgba(255,255,255,.46);color:transparent}.red{color:var(--red)}
+    header{position:fixed;top:0;left:0;right:0;z-index:30;border-bottom:1px solid transparent;transition:.3s}header.scrolled{background:rgba(6,6,6,.9);backdrop-filter:blur(15px);border-color:var(--line)}nav{height:84px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;background:var(--red);display:grid;place-items:center;clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);font:900 23px "Barlow Condensed"}.logo-copy strong{font:800 18px "Barlow Condensed";letter-spacing:.06em;display:block}.logo-copy small{font-size:8px;letter-spacing:.2em;color:#aaa;display:block;margin-top:2px}
+    .navlinks{display:flex;gap:30px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.navlinks a:hover{color:var(--red)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);padding:15px 22px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;border:0;color:#fff;cursor:pointer;transition:.25s;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}.btn:hover,.nav-cta:hover{background:#fff;color:#080808;transform:translateY(-2px)}.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);clip-path:none}.btn.ghost:hover{border-color:#fff}
+    .hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;padding:160px 0 90px;background:linear-gradient(90deg,rgba(4,4,4,.96) 0%,rgba(4,4,4,.7) 48%,rgba(4,4,4,.2) 75%),linear-gradient(0deg,#070707 0%,transparent 35%),url("https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=2000&q=88") center/cover}
+    .hero:after{content:"LEVEL UP";position:absolute;right:-45px;bottom:20px;font:900 clamp(100px,18vw,270px)/.7 "Barlow Condensed";color:rgba(255,255,255,.025);writing-mode:vertical-rl;pointer-events:none}.hero-content{position:relative;z-index:2;max-width:900px}.rating{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--line);background:rgba(0,0,0,.42);backdrop-filter:blur(8px);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:25px}.stars{color:#ffb52b;letter-spacing:2px}
+    h1{font-size:clamp(70px,12.2vw,178px);letter-spacing:-.055em}.hero h1 span{display:block}.hero-sub{max-width:630px;color:#c8c8c8;line-height:1.7;font-size:16px;margin:25px 0 30px;border-left:3px solid var(--red);padding-left:18px}.actions{display:flex;gap:13px;flex-wrap:wrap}.scroll{position:absolute;right:5%;bottom:45px;display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transform:rotate(90deg);transform-origin:right}.scroll i{width:45px;height:1px;background:#fff}
+    .ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0b;padding:17px 0}.ticker-track{display:flex;width:max-content;animation:ticker 25s linear infinite;font:700 18px "Barlow Condensed";letter-spacing:.08em;text-transform:uppercase}.ticker-track span{display:flex;align-items:center;gap:28px;margin-right:28px}.ticker-track b{color:var(--red)}@keyframes ticker{to{transform:translateX(-50%)}}
+    section{padding:120px 0}.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}.intro-copy p{color:var(--muted);line-height:1.8;font-size:17px}.stats{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:35px}.stat{padding:25px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.stat strong{font:800 46px "Barlow Condensed";display:block}.stat small{color:#999;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+    .image-stack{position:relative;min-height:620px}.image-stack .main-img{position:absolute;inset:0 55px 40px 0;width:calc(100% - 55px);height:calc(100% - 40px);object-fit:cover;filter:grayscale(100%)}.image-stack:after{content:"";position:absolute;inset:40px 0 0 55px;border:1px solid var(--red);z-index:-1}.stamp{position:absolute;right:0;bottom:0;width:145px;height:145px;border-radius:50%;background:var(--red);display:grid;place-items:center;text-align:center;font:800 18px/1 "Barlow Condensed";text-transform:uppercase;transform:rotate(-8deg);padding:20px}
+    .programs{background:#0d0d0d}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:55px}.section-head p{max-width:440px;color:#999;line-height:1.7}.program-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.program{padding:34px;min-height:280px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:.35s}.program:hover{background:var(--red);transform:translateY(-5px)}.program .num{color:#666;font:700 13px Inter}.program h3{font-size:40px;margin:70px 0 15px}.program p{color:#999;line-height:1.6;font-size:14px}.program:hover p,.program:hover .num{color:#fff}.program .arrow{position:absolute;right:25px;top:24px;font-size:25px;transform:rotate(-45deg);transition:.3s}.program:hover .arrow{transform:rotate(0)}
+    .band{padding:70px 0;background:var(--red);position:relative;overflow:hidden}.band:before{content:"LEVEL UP";position:absolute;inset:-60px auto auto -20px;font:900 220px "Barlow Condensed";color:rgba(0,0,0,.08);white-space:nowrap}.band-inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:35px}.band h2{font-size:clamp(46px,6vw,86px)}.band .btn{background:#080808}
+    .reviews-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}.score{font:900 160px/.8 "Barlow Condensed";color:var(--red)}.score-label{margin-top:25px;color:#aaa}.review-list{display:grid;gap:15px}.review{padding:28px;border:1px solid var(--line);background:#0c0c0c}.review .stars{font-size:13px}.review blockquote{margin:18px 0;line-height:1.7;color:#d2d2d2}.review strong{font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+    .contact{background:linear-gradient(135deg,#111 0%,#070707 60%)}.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}.contact-info h2{margin:18px 0 30px}.contact-item{display:flex;gap:15px;padding:20px 0;border-bottom:1px solid var(--line)}.contact-item span{color:var(--red);font-weight:800}.contact-item p{margin:0;color:#bbb;line-height:1.6}.form{background:#131313;padding:38px;border:1px solid var(--line)}.form h3{font-size:38px;margin-bottom:25px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#aaa}.field input,.field select,.field textarea{width:100%;background:#090909;border:1px solid #2e2e2e;color:#fff;padding:15px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red)}.field textarea{min-height:110px;resize:vertical}.form .btn{margin-top:20px;width:100%}
+    footer{padding:40px 0;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.footer-inner p{font-size:12px;color:#777}.socials{display:flex;gap:12px}.socials a{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;font-weight:800}.socials a:hover{background:var(--red);border-color:var(--red)}
+    .wa{position:fixed;right:22px;bottom:22px;z-index:25;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-weight:900;box-shadow:0 10px 35px rgba(37,211,102,.3);transition:.2s}.wa:hover{transform:scale(1.08)}.menu{display:none;background:none;border:0;color:white;font-size:26px}
+    .reveal{opacity:0;transform:translateY(35px);transition:.75s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:900px){.navlinks,.nav-cta{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:84px;left:0;right:0;background:#080808;padding:25px 20px;flex-direction:column;border-bottom:1px solid var(--line)}.hero{padding-bottom:75px;background-position:62% center}.scroll{display:none}.intro-grid,.reviews-grid,.contact-grid{grid-template-columns:1fr;gap:50px}.image-stack{min-height:500px}.program-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:flex-start;flex-direction:column}.band-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,1180px)}nav{height:72px}.logo-copy small{display:none}.hero{padding:135px 0 65px}.hero-sub{font-size:14px}.actions .btn{width:100%}section{padding:85px 0}h2{font-size:54px}.intro-grid{gap:40px}.image-stack{min-height:390px}.image-stack .main-img{inset:0 30px 25px 0;width:calc(100% - 30px);height:calc(100% - 25px)}.image-stack:after{inset:25px 0 0 30px}.stamp{width:105px;height:105px;font-size:14px}.program-grid{grid-template-columns:1fr}.program{min-height:230px}.program h3{margin-top:45px}.band{padding:55px 0}.score{font-size:120px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.form{padding:25px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav class="wrap">
+      <a class="logo" href="#home" aria-label="Level Up home"><div class="mark">LU</div><div class="logo-copy"><strong>LEVEL UP</strong><small>MMA ACADEMY · KORBA</small></div></a>
+      <div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#programs">Programs</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+      <a class="nav-cta" href="https://wa.me/919575252555?text=Hi%20Level%20Up%20Academy%2C%20I%20want%20to%20book%20a%20trial%20class." target="_blank" rel="noopener">Book a Trial →</a>
+      <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-content">
+        <div class="rating"><span class="stars">★★★★★</span><span>4.9 · 82 Google Reviews</span></div>
+        <h1><span>TRAIN.</span><span class="outline">FIGHT.</span><span class="red">LEVEL UP.</span></h1>
+        <p class="hero-sub">Korba's complete martial arts and fitness destination—professional coaching, disciplined training and a community that pushes you beyond your limits.</p>
+        <div class="actions"><a class="btn" href="https://wa.me/919575252555?text=Hi%20Level%20Up%20Academy%2C%20I%20want%20to%20book%20a%20trial%20class." target="_blank" rel="noopener">Book Free Trial →</a><a class="btn ghost" href="#programs">Explore Programs</a></div>
+      </div>
+      <div class="scroll">Scroll to explore <i></i></div>
+    </section>
+
+    <div class="ticker"><div class="ticker-track"><span>MMA <b>✦</b> Boxing <b>✦</b> Kickboxing <b>✦</b> Karate <b>✦</b> Taekwondo <b>✦</b> Judo <b>✦</b> Jiu-Jitsu <b>✦</b> Zumba <b>✦</b> Yoga <b>✦</b></span><span>MMA <b>✦</b> Boxing <b>✦</b> Kickboxing <b>✦</b> Karate <b>✦</b> Taekwondo <b>✦</b> Judo <b>✦</b> Jiu-Jitsu <b>✦</b> Zumba <b>✦</b> Yoga <b>✦</b></span></div></div>
+
+    <section id="about">
+      <div class="wrap intro-grid">
+        <div class="intro-copy reveal">
+          <div class="eyebrow">About the academy</div>
+          <h2>BUILT FOR THE<br><span class="outline">NEXT LEVEL.</span></h2>
+          <p>Level Up Mixed Martial Arts Academy & Fitness Studio brings combat sports, traditional martial arts and high-energy fitness together under one roof. Our positive, welcoming environment helps beginners, children, fitness enthusiasts and serious athletes train with confidence.</p>
+          <p>Every session focuses on technique, discipline, strength, respect and real progress—with professional guidance at every stage.</p>
+          <div class="stats"><div class="stat"><strong>4.9</strong><small>Google rating</small></div><div class="stat"><strong>82+</strong><small>Google reviews</small></div><div class="stat"><strong>9</strong><small>Training programs</small></div><div class="stat"><strong>1</strong><small>Powerful community</small></div></div>
+        </div>
+        <div class="image-stack reveal"><img class="main-img" src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1200&q=85" alt="Martial arts training session" loading="lazy"><div class="stamp">Discipline<br>Strength<br>Confidence</div></div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="eyebrow">What we teach</div><h2>CHOOSE YOUR<br><span class="red">DISCIPLINE.</span></h2></div><p>Structured coaching across striking, grappling, traditional martial arts and group fitness—designed for different ages and experience levels.</p></div>
+        <div class="program-grid">
+          <article class="program reveal"><span class="num">01</span><span class="arrow">→</span><h3>MMA</h3><p>Complete mixed martial arts training across striking, takedowns, grappling and conditioning.</p></article>
+          <article class="program reveal"><span class="num">02</span><span class="arrow">→</span><h3>BOXING</h3><p>Build sharp combinations, footwork, defence, timing, stamina and confidence.</p></article>
+          <article class="program reveal"><span class="num">03</span><span class="arrow">→</span><h3>KICKBOXING</h3><p>Powerful punches and kicks combined with movement, speed and full-body conditioning.</p></article>
+          <article class="program reveal"><span class="num">04</span><span class="arrow">→</span><h3>KARATE</h3><p>Traditional training focused on discipline, precision, control and character.</p></article>
+          <article class="program reveal"><span class="num">05</span><span class="arrow">→</span><h3>TAEKWONDO</h3><p>Dynamic kicking techniques, flexibility, balance and competitive development.</p></article>
+          <article class="program reveal"><span class="num">06</span><span class="arrow">→</span><h3>JUDO</h3><p>Develop throws, balance, control, safe falling and practical grappling skills.</p></article>
+          <article class="program reveal"><span class="num">07</span><span class="arrow">→</span><h3>JIU-JITSU</h3><p>Technical ground fighting, positioning, control, escapes and submissions.</p></article>
+          <article class="program reveal"><span class="num">08</span><span class="arrow">→</span><h3>ZUMBA</h3><p>Energetic dance fitness sessions that make cardio fun, social and effective.</p></article>
+          <article class="program reveal"><span class="num">09</span><span class="arrow">→</span><h3>YOGA</h3><p>Improve mobility, balance, breathing, recovery and mental focus.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band"><div class="wrap band-inner"><h2>YOUR FIRST STEP<br>STARTS <span style="color:#090909">TODAY.</span></h2><a class="btn" href="tel:+919575252555">Call 095752 52555 →</a></div></section>
+
+    <section id="reviews">
+      <div class="wrap reviews-grid">
+        <div class="reveal"><div class="eyebrow">Google reviews</div><div class="score">4.9</div><div class="stars" style="font-size:23px">★★★★★</div><p class="score-label">Trusted by students and families<br>across Korba · 82 reviews</p></div>
+        <div class="review-list">
+          <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“This academy is excellent, and the teachers are highly professional. The environment is very positive and welcoming, making learning comfortable and enjoyable.”</blockquote><strong>— Sumit Chouhan</strong></article>
+          <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“Expert guidance, disciplined training and a motivating atmosphere. A great place for martial arts and fitness.”</blockquote><strong>— Google Reviewer</strong></article>
+          <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“The coaches teach with dedication and explain everything clearly. Highly recommended for children and adults.”</blockquote><strong>— Google Reviewer</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-info reveal">
+          <div class="eyebrow">Visit Level Up</div><h2>READY TO<br><span class="red">BEGIN?</span></h2>
+          <div class="contact-item"><span>01</span><p><strong>Address</strong><br>First Floor, 30–31, City Center Mall, Power House Road, Korba, Chhattisgarh 495677</p></div>
+          <div class="contact-item"><span>02</span><p><strong>Call / WhatsApp</strong><br><a href="tel:+919575252555">095752 52555</a></p></div>
+          <div class="contact-item"><span>03</span><p><strong>Opening</strong><br>Opens from 5:00 AM</p></div>
+          <div class="actions" style="margin-top:25px"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Level+Up+Mixed+Martial+Arts+Academy+Fitness+Studio+Korba" target="_blank" rel="noopener">Get Directions ↗</a></div>
+        </div>
+        <form class="form reveal" id="trialForm">
+          <h3>BOOK A TRIAL CLASS</h3>
+          <div class="fields">
+            <div class="field"><label for="name">Your name</label><input id="name" required placeholder="Full name"></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" required inputmode="tel" placeholder="10-digit number"></div>
+            <div class="field full"><label for="interest">Interested in</label><select id="interest"><option>MMA</option><option>Boxing</option><option>Kickboxing</option><option>Karate</option><option>Taekwondo</option><option>Judo</option><option>Jiu-Jitsu</option><option>Zumba</option><option>Yoga</option></select></div>
+            <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your goal"></textarea></div>
+          </div>
+          <button class="btn" type="submit">Continue on WhatsApp →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><a class="logo" href="#home"><div class="mark">LU</div><div class="logo-copy"><strong>LEVEL UP</strong><small>MMA ACADEMY · KORBA</small></div></a><p>© 2026 Level Up Mixed Martial Arts Academy & Fitness Studio. All rights reserved.</p><div class="socials"><a href="tel:+919575252555" aria-label="Call">☎</a><a href="https://wa.me/919575252555" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a></div></div></footer>
+  <a class="wa" href="https://wa.me/919575252555?text=Hi%20Level%20Up%20Academy%2C%20I%20want%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
+
+  <script>
+    const header=document.getElementById('header'),menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
+    addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+    menu.addEventListener('click',()=>nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    document.getElementById('trialForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),interest=document.getElementById('interest').value,message=document.getElementById('message').value.trim();
+      const text='Hi Level Up Academy, I want to book a trial class.%0A%0AName: '+encodeURIComponent(name)+'%0APhone: '+encodeURIComponent(phone)+'%0AInterested in: '+encodeURIComponent(interest)+(message?'%0AMessage: '+encodeURIComponent(message):'');
+      window.open('https://wa.me/919575252555?text='+text,'_blank','noopener');
+    });
+  </script>
+</body>
+</html>
